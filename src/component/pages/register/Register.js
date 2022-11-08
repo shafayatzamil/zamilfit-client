@@ -1,11 +1,11 @@
-import React from 'react';
-
+import React from "react";
+import { Link } from "react-router-dom";
+import loginImage from "../../../assets/images/login-image.jpg";
 const Register = () => {
-    return (
-        <div>
-            <h2>this is register page</h2>
-        </div>
-    );
+  
+  return (
+    <h2>this is register</h2>
+  );
 };
 
 export default Register;
