@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import loginImage from "../../../assets/images/login-image.jpg";
 import { AuthContext } from "../../contexts/AuthProvider";
 const Register = () => {
-  const {createUser} = useContext(AuthContext);
+  const {createUser,signInWithGithub,googleSignIn,setUser} = useContext(AuthContext);
+  const [loginError, setLoginError] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -20,8 +21,39 @@ const Register = () => {
    .catch((error)=>{
     console.log(error.message);
    })
+
     form.reset();
   };
+
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+       .then((result) => {
+          const user = result.user;
+          // console.log(user.photoURL);
+          setUser(user);
+       })
+       .then((error) => {
+          console.error(error.message);
+          setLoginError(error.message);
+       });
+ }
+
+ const handleGithubSignIn = () => {
+  signInWithGithub()
+     .then((result) => {
+        const user = result.user;
+        console.log(user);
+        setUser(user);
+     })
+     .catch((error) => {
+        console.error(error.message);
+        setLoginError(error.message);
+     })
+}
+
+
+
   return (
     <div className="hero w-full my-20 bg-gray-100 py-5 rounded-lg">
       <div className="hero-content grid gap-10 md:grid-cols-2 flex-col lg:flex-row">
@@ -86,7 +118,7 @@ const Register = () => {
             <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
           </div>
           <div className="flex justify-center space-x-4">
-            <button aria-label="Log in with Google" className="p-3 rounded-sm">
+            <button onClick={handleGoogleSignIn} aria-label="Log in with Google" className="p-3 rounded-sm">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 32 32"
@@ -110,7 +142,7 @@ const Register = () => {
                 <path d="M13,0C5.82,0,0,5.82,0,13c0,6.518,4.801,11.899,11.057,12.839v-9.394H7.84v-3.417h3.217v-2.274 c0-3.765,1.834-5.417,4.963-5.417c1.498,0,2.291,0.111,2.666,0.162v2.983h-2.134c-1.328,0-1.792,1.259-1.792,2.679v1.868h3.893 l-0.528,3.417H14.76v9.422C21.105,25.006,26,19.581,26,13C26,5.82,20.18,0,13,0z"></path>
               </svg>
             </button>
-            <button aria-label="Log in with GitHub" className="p-3 rounded-sm">
+            <button onClick={handleGithubSignIn} aria-label="Log in with GitHub" className="p-3 rounded-sm">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 32 32"
