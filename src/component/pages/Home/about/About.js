@@ -3,7 +3,7 @@ import trainer from "../../../../assets/images/trainer.jpg";
 
 const About = () => {
   return (
-    <div className="hero min-h-max bg-base-200 mb-8 ">
+    <div className="hero min-h-max bg-base-200 my-8 ">
       <div className="hero-content flex-col lg:flex-row ">
        <div className="w-1/3"> <img src={trainer} className="  max-w-sm rounded-lg shadow-2xl h-fit" />
        </div>
