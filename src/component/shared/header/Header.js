@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthProvider";
+import icons from "../../../assets/images/logo.png";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
+
   return (
     <div className="navbar bg-base-500  my-4">
       <div className="navbar-start">
@@ -31,30 +36,44 @@ const Header = () => {
           to="/"
           className="btn btn-ghost normal-case text-2xl text-red-500 "
         >
-          ZAMILfit's
+          <img src={icons} className="w-10" />
+          ZamilFits
         </Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal p-0">
-          <li className="font-semibold text-xl">
-            <Link to="addservice">Add service</Link>
-          </li>
-          <li className="font-semibold text-xl">
-            <Link to="/review">My Review</Link>
-          </li>
-          {/* <li className="font-semibold">
-            <Link to="/login">Login</Link>
-          </li> */}
-        </ul>
-      </div>
-      <div className="navbar-end">
-        <Link to="register">
-          <button className="btn btn-outline mr-2">SignIn</button>
-        </Link>
-        <Link to="login">
-          <button className="btn btn-outline btn-accent ">LogInn</button>
-        </Link>
-      </div>
+      {user && user.uid ? (
+        <>
+          <div className="navbar-center hidden lg:flex">
+            <ul className="menu menu-horizontal p-0">
+              <li className="font-semibold text-xl">
+                <Link to="addservice">Add service</Link>
+              </li>
+              <li className="font-semibold text-xl">
+                <Link to="/review">My Review</Link>
+              </li>
+              <li className="font-semibold text-xl">
+                <Link to="/blog">Blog</Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="navbar-end">
+            <button className="btn btn-outline mr-2" onClick={logOut}>
+              logOut
+            </button>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="navbar-end">
+            <Link to="register">
+              <button className="btn btn-outline mr-2">SignIn</button>
+            </Link>
+            <Link to="login">
+              <button className="btn btn-outline btn-accent ">LogIn</button>
+            </Link>
+          </div>
+        </>
+      )}
     </div>
   );
 };
