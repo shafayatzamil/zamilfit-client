@@ -64,6 +64,13 @@ const Header = () => {
         </>
       ) : (
         <>
+          <li className="font-semibold text-xl  mr-2">
+            <Link to="/">Home </Link>
+          </li>
+          <li className="font-semibold text-xl">
+            <Link to="/blog">Blog</Link>
+          </li>
+
           <div className="navbar-end">
             <Link to="register">
               <button className="btn btn-outline mr-2">SignIn</button>
