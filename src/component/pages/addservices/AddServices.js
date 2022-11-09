@@ -9,7 +9,7 @@ const AddServices = () => {
       name: e.target.name.value,
       image: e.target.image.value,
       price: parseInt(e.target.price.value),
-      rating: parseInt(e.target.rating.value),
+      rating: parseFloat(e.target.rating.value),
       description: e.target.description.value,
     };
 
