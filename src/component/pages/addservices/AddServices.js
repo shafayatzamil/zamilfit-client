@@ -13,7 +13,7 @@ const AddServices = () => {
       description: e.target.description.value,
     };
 
-    fetch("http://localhost:5000/addservice", {
+    fetch("https://zamilfits-server-shafayatzamil.vercel.app/addservice", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -46,6 +46,7 @@ const AddServices = () => {
               type="text"
               name="name"
               placeholder="Name"
+              required
               className="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 text-gray-600 placeholder-gray-400 outline-none"
             />
           </div>
@@ -57,6 +58,7 @@ const AddServices = () => {
             <input
               type="text"
               name="image"
+              required
               placeholder="url"
               className="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 text-gray-600 placeholder-gray-400 outline-none"
             />
@@ -69,6 +71,7 @@ const AddServices = () => {
             <input
               type="text"
               name="price"
+              required
               placeholder="price"
               className="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 text-gray-600 placeholder-gray-400 outline-none"
             />
@@ -81,6 +84,7 @@ const AddServices = () => {
             <input
               type="text"
               name="rating"
+              required
               placeholder="rating out of 5"
               className="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 text-gray-600 placeholder-gray-400 outline-none"
             />
@@ -93,6 +97,7 @@ const AddServices = () => {
             <input
               type="text"
               name="description"
+              required
               placeholder="Description"
               className="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 text-gray-600 placeholder-gray-400 outline-none"
             />

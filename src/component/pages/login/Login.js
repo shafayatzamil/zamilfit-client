@@ -4,53 +4,64 @@ import loginImage from "../../../assets/images/login-image.jpg";
 import { AuthContext } from "../../contexts/AuthProvider";
 
 const Login = () => {
-  const {login,signInWithGithub,googleSignIn,setUser} = useContext(AuthContext);
-  const [loginError, setLoginError] = useState('');
+  const { login, signInWithGithub, googleSignIn, setUser, singInWithFacebook } =
+    useContext(AuthContext);
+  const [loginError, setLoginError] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
 
-    login(email,password)
-    .then((result)=>{
-      const user = result.user;
-      console.log(user);
-    })
-    .catch((error)=>{
-      console.log(error.message);
-    })
+    login(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
 
     form.reset();
   };
 
-
   const handleGoogleSignIn = () => {
     googleSignIn()
-       .then((result) => {
-          const user = result.user;
-          // console.log(user.photoURL);
-          setUser(user);
-       })
-       .then((error) => {
-          console.error(error.message);
-          setLoginError(error.message);
-       });
- }
+      .then((result) => {
+        const user = result.user;
+        // console.log(user.photoURL);
+        setUser(user);
+      })
+      .then((error) => {
+        console.error(error.message);
+        setLoginError(error.message);
+      });
+  };
 
- const handleGithubSignIn = () => {
-  signInWithGithub()
-     .then((result) => {
+  const handleFacebookSignIn = () => {
+    singInWithFacebook()
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+      })
+      .then((error) => {
+        console.log(error.message);
+        setLoginError(error.message);
+      });
+  };
+
+  const handleGithubSignIn = () => {
+    signInWithGithub()
+      .then((result) => {
         const user = result.user;
         console.log(user);
         setUser(user);
-     })
-     .catch((error) => {
+      })
+      .catch((error) => {
         console.error(error.message);
         setLoginError(error.message);
-     })
-}
-
+      });
+  };
 
   return (
     <div className="hero w-full my-20 bg-gray-100 py-5 rounded-lg">
@@ -101,7 +112,11 @@ const Login = () => {
             <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
           </div>
           <div className="flex justify-center space-x-4">
-            <button onClick={handleGoogleSignIn} aria-label="Log in with Google" className="p-3 rounded-sm">
+            <button
+              onClick={handleGoogleSignIn}
+              aria-label="Log in with Google"
+              className="p-3 rounded-sm"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 32 32"
@@ -110,7 +125,11 @@ const Login = () => {
                 <path d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z"></path>
               </svg>
             </button>
-            <button aria-label="Log in with Facebook" className="p-3 rounded-sm">
+            <button
+              aria-label="Log in with Facebook"
+              className="p-3 rounded-sm"
+              onClick={handleFacebookSignIn}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
@@ -122,7 +141,11 @@ const Login = () => {
                 <path d="M13,0C5.82,0,0,5.82,0,13c0,6.518,4.801,11.899,11.057,12.839v-9.394H7.84v-3.417h3.217v-2.274 c0-3.765,1.834-5.417,4.963-5.417c1.498,0,2.291,0.111,2.666,0.162v2.983h-2.134c-1.328,0-1.792,1.259-1.792,2.679v1.868h3.893 l-0.528,3.417H14.76v9.422C21.105,25.006,26,19.581,26,13C26,5.82,20.18,0,13,0z"></path>
               </svg>
             </button>
-            <button onClick={handleGithubSignIn} aria-label="Log in with GitHub" className="p-3 rounded-sm">
+            <button
+              onClick={handleGithubSignIn}
+              aria-label="Log in with GitHub"
+              className="p-3 rounded-sm"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 32 32"
