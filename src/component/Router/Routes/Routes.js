@@ -7,6 +7,7 @@ import Login from "../../pages/login/Login";
 import Register from "../../pages/register/Register";
 import Service from "../../pages/service/Service";
 import ServiceDetails from "../../pages/serviceDetails/ServiceDetails";
+import ProtectedRoute from "./ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/addservice",
-        element: <AddServices />,
+        element: (
+          <ProtectedRoute>
+            <AddServices></AddServices>
+          </ProtectedRoute>
+        ),
       },
       {
         path: "/service",
@@ -43,7 +48,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/blog",
-        element: <Blog />,
+        element: (
+          <ProtectedRoute>
+            <Blog></Blog>
+          </ProtectedRoute>
+        ),
       },
     ],
   },

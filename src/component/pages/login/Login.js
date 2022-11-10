@@ -16,6 +16,17 @@ const Login = () => {
     login(email, password)
       .then((result) => {
         const user = result.user;
+
+        // signToken(user.uid)
+        fetch("http://localhost:5000/signtoken", {
+          method: "POST",
+          body: JSON.stringify({ userid: user.uid }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            JSON.stringify(localStorage.setItem("token", data.token));
+          });
+
         console.log(user);
       })
       .catch((error) => {
@@ -30,6 +41,15 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         // console.log(user.photoURL);
+        fetch("http://localhost:5000/signtoken", {
+          method: "POST",
+          body: JSON.stringify({ userid: user.uid }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            JSON.stringify(localStorage.setItem("token", data.token));
+          });
+
         setUser(user);
       })
       .then((error) => {
@@ -42,6 +62,16 @@ const Login = () => {
     singInWithFacebook()
       .then((result) => {
         const user = result.user;
+
+        fetch("http://localhost:5000/signtoken", {
+          method: "POST",
+          body: JSON.stringify({ userid: user.uid }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            JSON.stringify(localStorage.setItem("token", data.token));
+          });
+
         setUser(user);
       })
       .then((error) => {

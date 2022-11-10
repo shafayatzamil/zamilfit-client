@@ -2,9 +2,11 @@ import React from "react";
 
 const Blog = () => {
   return (
-    <div>
-      <div>
-        <h1>Difference between SQL and NoSQL?</h1>
+    <div className="m-4">
+      <div className="mb-2">
+        <h1 className="text-3xl font-semibold">
+          Difference between SQL and NoSQL?
+        </h1>
         <p>
           <p>
             (SQL) databases are classified as Relational databases, i.e.,
@@ -25,8 +27,10 @@ const Blog = () => {
           </p>
         </p>
       </div>
-      <div>
-        <h1>What is JWT, and how does it work?</h1>
+      <div className="mb-2">
+        <h1 className="text-3xl font-semibold">
+          What is JWT, and how does it work?
+        </h1>
         <p>
           JSON Web Token (JWT) is an open standard for securely transmitting
           information between parties as JSON object.
@@ -39,8 +43,10 @@ const Blog = () => {
           </p>
         </p>
       </div>
-      <div>
-        <h1>What is the difference between javascript and NodeJS?</h1>
+      <div className="mb-2">
+        <h1 className="text-3xl font-semibold">
+          What is the difference between javascript and NodeJS?
+        </h1>
         <p>
           NodeJS is a cross-platform and opensource Javascript runtime
           environment that allows the javascript to be run on the server-side.
@@ -54,8 +60,10 @@ const Blog = () => {
           of Oops but it is based on prototype inheritance.
         </p>
       </div>
-      <div>
-        <h1>How does NodeJS handle multiple requests at the same time?</h1>
+      <div className="mb-2">
+        <h1 className="text-3xl font-semibold">
+          How does NodeJS handle multiple requests at the same time?
+        </h1>
 
         <p>
           NodeJS receives multiple client requests and places them into
