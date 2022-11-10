@@ -15,7 +15,7 @@ const Service = () => {
 
   return (
     <div className="col-span-1 md:col-span-8 grid gap-8 mb-14">
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(15rem,1fr))] gap-5">
+      <div className="grid grid-cols-3 gap-5">
         {loading ? (
           <div className="radial-progress" style={{ "--value": 70 }}>
             70%

@@ -49,7 +49,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/review",
-        element: <AllReviews />,
+        element: (
+          <ProtectedRoute>
+            <AllReviews />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "/blog",

@@ -1,4 +1,5 @@
 # Getting Started with Create React App
+
 ====================================
 
 1.react-router-dom
@@ -9,19 +10,20 @@
 5.express js
 
 ## this is self service site
+
 ==============================
 
-* Table of Contents
-* General Info home page
-* Technologies-sign in login
-* Installation-firebase-router
-* Collaboration-Sources
-* blog
+- Table of Contents
+- General Info home page
+- Technologies-sign in login
+- Installation-firebase-router
+- Collaboration-Sources
+- blog
 
+Write down general information about your project. It is a good idea to always put a project status in the readme file. This is where you can find it. live site Link : https://zamilfits.web.app/ serversite Link: https://zamilfits-server.vercel.app/
 
-Write down general information about your project. It is a good idea to always put a project status in the readme file. This is where you can find it. live site Link : https://zamilfits.web.app/ serversite Link:https://zamilfits-server.vercel.app/
+## Installation
 
-Installation
 A little intro about the installation.
 
 $ npm install
@@ -34,9 +36,10 @@ tailwind. daisy ui firebase authentical Load data from back end create back end 
 
 ## blogs
 
-A list of frequently asked questions
+=========
 
-Second question in bold To answer this question, we use an unordered list:
-First point login the page or sign up the ppage authentication by google,github
-Second Point if login you can check the course route with the course catagoryies
-Third point if you are login then you can checkout the course plan
+- this is a gyn trainer sevice website
+- you can add the service
+  \*you can review the service
+- if you reviewed in that you can edit and delete it
+- proteced routed is add service and my reviews

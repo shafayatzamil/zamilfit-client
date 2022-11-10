@@ -5,7 +5,7 @@ const AllReviews = () => {
   const [reviews, setReviews] = useState([]);
   const [refresh, setRefresh] = useState(false);
   useEffect(() => {
-    fetch("http://localhost:5000/review")
+    fetch("https://zamilfits-server-shafayatzamil.vercel.app/review")
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
@@ -16,10 +16,10 @@ const AllReviews = () => {
         }
       })
       .catch((err) => toast.error(err.message));
-  }, []);
+  }, [refresh]);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/review/${id}`, {
+    fetch(`https://zamilfits-server-shafayatzamil.vercel.app/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -32,6 +32,10 @@ const AllReviews = () => {
         }
       })
       .catch((err) => toast.error(err.message));
+  };
+
+  const handleEdit = (id) => {
+    console.log("clicked");
   };
 
   return (
@@ -59,7 +63,12 @@ const AllReviews = () => {
                       tabIndex={0}
                       className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
                     >
-                      <button className="btn btn-outline">Edit</button>
+                      <button
+                        className="btn btn-outline"
+                        onClick={() => handleEdit(review._id)}
+                      >
+                        Edit
+                      </button>
                       <button
                         className="btn btn-outline"
                         onClick={() => handleDelete(review._id)}
