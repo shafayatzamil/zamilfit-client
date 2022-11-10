@@ -2,8 +2,10 @@ import React, { useContext, useState } from "react";
 import { useNavigate, Navigate, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 import UserReview from "../userreview/UserReview";
+import TabTitle from "../../../utils/generalfunction";
 
 const ServiceDetails = () => {
+  TabTitle("zamilFits-service");
   const service = useLoaderData();
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);

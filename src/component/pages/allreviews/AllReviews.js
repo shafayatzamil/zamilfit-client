@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 const AllReviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -26,6 +26,7 @@ const AllReviews = () => {
       .then((data) => {
         if (data.success) {
           toast.success(data.message);
+
           setRefresh(!refresh);
         } else {
           toast.error(data.error);
@@ -83,6 +84,7 @@ const AllReviews = () => {
           </tbody>
         </table>
       </div>
+      <ToastContainer />
     </div>
   );
 };

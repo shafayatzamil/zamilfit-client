@@ -23,7 +23,7 @@ const AddServices = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-          toast.success(data.message);
+          toast.success(data.message, { id: "zamil" });
         } else {
           toast.error(data.error);
         }
@@ -107,7 +107,6 @@ const AddServices = () => {
             <button className="py-3 px-8 bg-green-400 text-white font-bold">
               Add
             </button>
-            <ToastContainer />
           </div>
         </form>
       </div>
