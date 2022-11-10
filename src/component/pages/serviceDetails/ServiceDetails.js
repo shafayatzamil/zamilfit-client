@@ -13,7 +13,7 @@ const ServiceDetails = () => {
   const [loading, setLoading] = useState(true);
 
   React.useEffect(() => {
-    fetch(`http://localhost:5000/review/${_id}`)
+    fetch(`https://zamilfits-server.vercel.app/review/${_id}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
@@ -38,7 +38,7 @@ const ServiceDetails = () => {
     if (user && user.uid) {
       const token = localStorage.getItem("token");
 
-      fetch("http://localhost:5000/review", {
+      fetch("https://zamilfits-server.vercel.app/review", {
         method: "POST",
         headers: {
           "content-type": "application/json",

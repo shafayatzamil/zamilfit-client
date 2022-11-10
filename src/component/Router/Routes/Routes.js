@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layout/Main";
 import AddServices from "../../pages/addservices/AddServices";
+import AllReviews from "../../pages/allreviews/AllReviews";
 import Blog from "../../pages/blog/Blog";
 import Home from "../../pages/Home/home/Home";
 import Login from "../../pages/login/Login";
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
           fetch(
             `https://zamilfits-server-shafayatzamil.vercel.app/service/${params.id}`
           ),
+      },
+      {
+        path: "/review",
+        element: <AllReviews />,
       },
       {
         path: "/blog",

@@ -5,7 +5,7 @@ import icons from "../../../assets/images/logo.png";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
 
   return (
     <div className="navbar bg-base-500  my-4">

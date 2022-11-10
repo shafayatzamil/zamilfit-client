@@ -18,7 +18,7 @@ const Login = () => {
         const user = result.user;
 
         // signToken(user.uid)
-        fetch("http://localhost:5000/signtoken", {
+        fetch("https://zamilfits-server.vercel.app/signtoken", {
           method: "POST",
           body: JSON.stringify({ userid: user.uid }),
         })
@@ -41,7 +41,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         // console.log(user.photoURL);
-        fetch("http://localhost:5000/signtoken", {
+        fetch("https://zamilfits-server.vercel.app/signtoken", {
           method: "POST",
           body: JSON.stringify({ userid: user.uid }),
         })
@@ -63,7 +63,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
 
-        fetch("http://localhost:5000/signtoken", {
+        fetch("https://zamilfits-server.vercel.app/signtoken", {
           method: "POST",
           body: JSON.stringify({ userid: user.uid }),
         })
