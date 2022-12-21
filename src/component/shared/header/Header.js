@@ -5,8 +5,6 @@ import icons from "../../../assets/images/logo.png";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-  // console.log(user);
-
   return (
     // <div className="navbar bg-base-500  my-4">
     //   <div className="navbar-start">
@@ -104,29 +102,19 @@ const Header = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box"
           >
             {user && user.uid ? (
               <>
-                <div className="navbar-center hidden lg:flex">
-                  <ul className="menu menu-horizontal p-0">
-                    <li className="font-semibold text-xl">
-                      <Link to="addservice">Add service</Link>
-                    </li>
-                    <li className="font-semibold text-xl">
-                      <Link to="/review">My Review</Link>
-                    </li>
-                    <li className="font-semibold text-xl">
-                      <Link to="/blog">Blog</Link>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="navbar-end">
-                  <button className="btn btn-outline mr-2" onClick={logOut}>
-                    logOut
-                  </button>
-                </div>
+                <li className="font-semibold text-xl">
+                  <Link to="addservice">Add service</Link>
+                </li>
+                <li className="font-semibold text-xl">
+                  <Link to="/review">My Review</Link>
+                </li>
+                <li className="font-semibold text-xl">
+                  <Link to="/blog">Blog</Link>
+                </li>
               </>
             ) : (
               <>
