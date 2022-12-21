@@ -24,7 +24,9 @@ const MyServiceCard = () => {
 
   return (
     <div className="col-span-1 md:col-span-8 grid  gap-8 mb-14 relative">
-      <h1 className="text-4xl text-center text-red-400 ">MY SERVICE</h1>
+      <h1 className="text-4xl text-center text-white bg-rose-300 p-2 ">
+        MY SERVICE
+      </h1>
       <div>
         {loading ? (
           <div className="flex justify-center items-center h-full">

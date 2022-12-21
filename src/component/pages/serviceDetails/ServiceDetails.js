@@ -60,7 +60,7 @@ const ServiceDetails = () => {
           if (data.success) {
             // toast.success(data.message);
             setReview(data.data.review);
-            console.log(data);
+            // console.log(data);
           } else {
             // toast.error(data.error);
           }
