@@ -9,7 +9,7 @@ const BannerItem = ({ slide }) => {
         <img src={image} alt="" className="w-full rounded-xl" />
       </div>
       <div className="absolute flex justify-end transform -translate-y-1/2 left-24 top-1/4">
-        <h1 className="text-6xl font-bold text-white">
+        <h1 className=" font-bold text-white sm:text-4xl md:text-6xl">
           Hey!
           <br />
           I'M ZAMIL
@@ -24,7 +24,7 @@ const BannerItem = ({ slide }) => {
           Fitness,Health,and Lifestyle Influencer
         </p>
 
-        <p className="text-2xl text-white md:hidden lg:hidden  ">
+        <p className="text-xl text-white md:hidden lg:hidden  ">
           {" "}
           A Gym trainer{" "}
         </p>
