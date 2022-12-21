@@ -97,7 +97,11 @@ const Login = () => {
     <div className="hero w-full my-20 bg-gray-100 py-5 rounded-lg">
       <div className="hero-content grid gap-10 md:grid-cols-2 flex-col lg:flex-row">
         <div className="text-center lg:text-left">
-          <img className=" ml-5 w-3/4 rounded-lg" src={loginImage} alt="" />
+          <img
+            className=" hidden md:block ml-5 w-3/4 rounded-lg"
+            src={loginImage}
+            alt=""
+          />
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-20">
           <h1 className="text-5xl text-center font-bold">Login</h1>

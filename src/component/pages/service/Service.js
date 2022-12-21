@@ -17,15 +17,17 @@ const Service = () => {
 
   return (
     <div className="col-span-1 md:col-span-8 grid gap-8 mb-14">
-      <div className="grid grid-cols-3 gap-5">
+      <div>
         {loading ? (
-          <div className="radial-progress" style={{ "--value": 70 }}>
-            70%
+          <div className="flex justify-center items-center h-full">
+            <div className="w-6 h-6 border-2 border-dashed rounded-full animate-spin border-green-900"></div>
           </div>
         ) : (
-          allservice.map((service) => (
-            <Card key={service._id} service={service} />
-          ))
+          <div className="grid grid-cols-1  md:grid-cols-3 gap-3">
+            {allservice.map((service) => (
+              <Card key={service._id} service={service} />
+            ))}
+          </div>
         )}
       </div>
     </div>

@@ -24,8 +24,8 @@ const MyServiceCard = () => {
 
   return (
     <div className="col-span-1 md:col-span-8 grid  gap-8 mb-14 relative">
-      <h1 className="text-4xl text-center text-red-400">HERE IS MY SERVICE</h1>
-      <div className="grid grid-cols-3 gap-5">
+      <h1 className="text-4xl text-center text-red-400 ">MY SERVICE</h1>
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 ">
         {reversed.slice(0, 3).map((service) => (
           <Card key={service._id} service={service} />
         ))}
