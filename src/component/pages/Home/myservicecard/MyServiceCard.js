@@ -25,10 +25,18 @@ const MyServiceCard = () => {
   return (
     <div className="col-span-1 md:col-span-8 grid  gap-8 mb-14 relative">
       <h1 className="text-4xl text-center text-red-400 ">MY SERVICE</h1>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 ">
-        {reversed.slice(0, 3).map((service) => (
-          <Card key={service._id} service={service} />
-        ))}
+      <div>
+        {loading ? (
+          <div className="flex justify-center items-center h-full">
+            <div className="w-6 h-6 border-2 border-dashed rounded-full animate-spin border-green-900"></div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1  md:grid-cols-3 gap-3">
+            {reversed.slice(0, 3).map((service) => (
+              <Card key={service._id} service={service} />
+            ))}
+          </div>
+        )}
       </div>
       <Link to="/service">
         <button className="btn  btn-secondary absolute right-5 ">
