@@ -20,7 +20,7 @@ const MyServiceCard = () => {
   for (let i = allservice.length - 1; i >= 0; i--) {
     reversed.push(allservice[i]);
   }
-  console.log(reversed);
+  // console.log(reversed);
 
   return (
     <div className="col-span-1 md:col-span-8 grid  gap-8 mb-14 relative">

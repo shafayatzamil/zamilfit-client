@@ -5,8 +5,13 @@ const About = () => {
   return (
     <div className="hero min-h-max bg-base-200 my-8 ">
       <div className="hero-content flex-col lg:flex-row ">
-       <div className="w-1/3"> <img src={trainer} className="  max-w-sm rounded-lg shadow-2xl h-fit" />
-       </div>
+        <div className="w-1/3 ">
+          {" "}
+          <img
+            src={trainer}
+            className="hidden md:block max-w-sm rounded-lg shadow-2xl h-fit"
+          />
+        </div>
         <div className="w-2/3">
           <h1 className="text-5xl font-bold text-slate-700">About</h1>
           <h1 className="text-5xl font-bold text-slate-700">Zamil Trainer</h1>

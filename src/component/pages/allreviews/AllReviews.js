@@ -19,7 +19,7 @@ const AllReviews = () => {
   }, [refresh]);
 
   const handleDelete = (id) => {
-    fetch(`https://zamilfits-server-shafayatzamil.vercel.app/${id}`, {
+    fetch(`https://zamilfits-server-shafayatzamil.vercel.app/review/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
